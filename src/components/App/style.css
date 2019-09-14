@@ -1,0 +1,36 @@
+/*************************************
+                GENERAL 
+**************************************/
+.App {
+  color: #BA0000;
+  font-family: 'Lato', sans-serif;
+  background: #000;
+  background: linear-gradient(#000000, 75%, #360000);
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem
+}
+
+@media (min-width:1000px) {
+  h1 {
+    font-size: 7.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}

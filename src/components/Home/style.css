@@ -1,0 +1,171 @@
+/*
+ *  Table of contents
+ *
+ *  1. Structure
+ *  2. Logo
+ *  3. Form
+*/
+
+/**************************************
+          1.  STRUCTURE 
+**************************************/
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+/**************************************
+          2.  LOGO
+**************************************/
+
+.large-logo{
+  color: #BA0000;
+  font-family: 'Impact', sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.logo-white {
+  color: #000;
+  text-shadow: 
+      -1px 0 #fff, 
+       0 1px #fff, 
+       1px 0 #fff, 
+      0 -1px #fff;
+}
+
+
+@media (min-width: 1000px) {
+  .large-logo {
+    letter-spacing: 14px;
+  }  
+
+  .logo-white {
+    text-shadow: 
+        -2px 0 #fff, 
+         0 2px #fff, 
+         2px 0 #fff, 
+        0 -2px #fff;
+  }
+}
+
+/**************************************
+            3.  FORM
+***************************************/
+.home-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 1.5rem;
+    width: 320px;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: inline-block;
+  }
+  
+  input {
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(186, 0, 0, 0.8);
+    color: rgba(186, 0, 0, 0.8);
+    font-size: 1rem;
+    padding: 10px 10px 10px 5px;
+    width: 240px;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+
+  }
+  
+  input:focus { 
+    outline:none; 
+  }
+  
+  label {
+    color: rgba(186, 0, 0, 0.8);
+    font-size: 1rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+  }
+  
+  input:focus ~ label, input:valid ~ label {
+    top: -14px;
+    font-size: 0.66rem;
+    color: rgba(186, 0, 0, 0.8);
+  }
+  
+  .battle-button {
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+    border: 1px rgba(186, 0, 0, 0.8) solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1.25px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 240px;
+    color: rgba(186, 0, 0, 0.8);
+  }
+
+  .battle-button:active,
+  .battle-button:focus {
+    background: rgba(186, 0, 0, 0.8);
+    color: #000;
+    outline: none;
+  }
+  
+  
+  @media (min-width: 1000px) {
+    .home-form {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-top: 2.5rem;
+      width: 950px;
+    }
+  
+    .form-group.left {
+      justify-self: start;
+    }
+    
+    .form-group.right {
+      justify-self: end;
+    }
+  
+    .form-group.submit {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-top: 40px;
+    }
+  
+    input {
+      font-size: 1.2rem;
+      width: 350px;
+    }
+  
+    label {
+      font-size: 1.2rem;
+    }
+  
+    input:focus ~ label, input:valid ~ label {
+      font-size: 0.9rem;
+    }
+  
+    .battle-button {
+      font-size: 1.5rem;
+    }
+  }
