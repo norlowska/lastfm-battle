@@ -74,7 +74,7 @@ class Battle extends Component {
 }
 
 Battle.propTypes = {
-    location: PropTypes.string.isRequired,
+    location: PropTypes.object.isRequired,
     fetchUser: PropTypes.func.isRequired,
     isPending: PropTypes.bool.isRequired,
     error: PropTypes.object,
@@ -85,8 +85,8 @@ Battle.propTypes = {
 const mapStateToProps = state => ({
     isPending: state.isPending,
     error: state.error,
-   user1: state.user1,
-   user2: state.user2
+    user1: state.user1,
+    user2: state.user2
 });
 
 export default connect(mapStateToProps,

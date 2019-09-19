@@ -18,7 +18,7 @@ export const fetchUser = (username) => {
             if(currentMonth === 0) {
                 firstDayOfWeek = new Date(currentYear - 1, 11, lastMonday, 0, 0, 0);
             } else {
-                firstDayOfWeek = new Date(currentYear, currentMonth - 1, lastMonday, 0, 0, 0);
+                firstDayOfWeek = new Date(currentYear, currentMonth, lastMonday, 0, 0, 0);
             }
         } else {
             firstDayOfWeek = new Date(currentYear, currentMonth, lastMonday, 0, 0, 0);

@@ -130,15 +130,23 @@ i.arrow-left:hover {
 
 .logo-white {
   text-shadow: 
-      -1px 0 #fff, 
-       0 1px #fff, 
-       1px 0 #fff, 
-      0 -1px #fff;
+      -0.5px 0 #fff, 
+       0 0.5px #fff, 
+       0.5px 0 #fff, 
+      0 -0.5px #fff;
 }
 
 @media (min-width: 1000px) {
   .small-logo { 
     letter-spacing: 5px;
+  }
+
+  .logo-white {
+    text-shadow: 
+        -1px 0 #fff, 
+         0 1px #fff, 
+         1px 0 #fff, 
+        0 -1px #fff;
   }
 } 
 

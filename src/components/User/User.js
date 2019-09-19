@@ -43,5 +43,5 @@ export default function User(props) {
 
 User.propTypes = {
     user: PropTypes.object.isRequired,
-    wins: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired
+    wins: PropTypes.arrayOf(PropTypes.string).isRequired
 };
