@@ -4,6 +4,14 @@ import axios from 'axios';
 const apiUrl = 'https://ws.audioscrobbler.com/2.0/';
 const apiKey = 'api_key=43d29806aac0cd9f7bac14612e06e46e';
 
+const startOfWeek = (date) => {
+    var diff = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
+    var startOfWeek = new Date(date);
+    startOfWeek.setHours(0, 0, 0, 0);
+    startOfWeek.setDate(diff);
+    return startOfWeek;
+};
+
 export const fetchUser = (username) => {
     return function(dispatch) {
         dispatch(fetchUserPending());
@@ -11,18 +19,7 @@ export const fetchUser = (username) => {
         var current = new Date();
         var currentYear = current.getFullYear();
         var currentMonth = current.getMonth();
-        var lastMonday = current.getDate() - current.getDay() + 1;
-        var firstDayOfWeek;
-        // Set last Monday to firstDayOfWeek, checking if this Monday was in previous month and/or previous year
-        if(lastMonday < current.getDate()) {
-            if(currentMonth === 0) {
-                firstDayOfWeek = new Date(currentYear - 1, 11, lastMonday, 0, 0, 0);
-            } else {
-                firstDayOfWeek = new Date(currentYear, currentMonth, lastMonday, 0, 0, 0);
-            }
-        } else {
-            firstDayOfWeek = new Date(currentYear, currentMonth, lastMonday, 0, 0, 0);
-        }
+        var lastMonday = startOfWeek(current);
 
         /* API calls for:  [user info,
                             tracks from the start of the year,
@@ -34,7 +31,7 @@ export const fetchUser = (username) => {
         return axios.all([axios.get(apiUrl + '?method=user.getInfo&user=' + username + '&' + apiKey + '&format=json'),
                           axios.get(apiUrl + '?method=user.getrecenttracks&user=' + username + '&from=' + Date.UTC(currentYear, 0, 1, 0, 0, 0) / 1000 + '&to' + Date.now() / 1000 + '&limit=1&' + apiKey + '&format=json'),
                           axios.get(apiUrl + '?method=user.getrecenttracks&user=' + username + '&from=' + Date.UTC(currentYear, currentMonth, 1, 0, 0, 0) / 1000 + '&to' + Date.now() / 1000 + '&limit=1&' + apiKey + '&format=json'),
-                          axios.get(apiUrl + '?method=user.getrecenttracks&user=' + username + '&from=' + firstDayOfWeek / 1000 + '&to' + Date.now() / 1000 + '&limit=1&' + apiKey + '&format=json')
+                          axios.get(apiUrl + '?method=user.getrecenttracks&user=' + username + '&from=' + lastMonday.getTime() / 1000 + '&to' + Date.now() / 1000 + '&limit=1&' + apiKey + '&format=json')
                     ])
 
         .then(axios.spread((firstResponse, secondResponse, thirdResponse, forthResponse) => {
