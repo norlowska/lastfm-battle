@@ -13,3 +13,6 @@ See demo [here](https://lastfm-battle.herokuapp.com/)
  - [Axios](https://github.com/axios/axios)
  - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
  - [Last.fm API](https://www.last.fm/api/)
+ 
+ ## TO DO
+ - Errors handling
