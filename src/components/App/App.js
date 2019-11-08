@@ -4,18 +4,20 @@
  *  Component-wrapper for whole application. Provides routing
  *  and configaration for Redux store.
  */
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import { reducer } from '../../reducers';
-import Home from '../Home/Home';
-import Battle from '../Battle/Battle';
-import './style.css';
+import { reducer } from "../../reducers";
+import "../../index.css";
+import Home from "../Home/Home";
+import Battle from "../Battle/Battle";
+import "./style.css";
 
 // Create store with thunk middleware
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 function App() {
   return (

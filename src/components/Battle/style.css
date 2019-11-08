@@ -10,11 +10,17 @@
 /**************************************
           1. STRUCTURE
 **************************************/
-.center-container {
+.battle-container {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  height: 100%;
+}
+
+.center-container {
+  flex-grow: 1;
+  align-self: center;
+  display: flex;
   align-items: center;
-  height: 100vh;
 }
 
 main {
@@ -24,12 +30,12 @@ main {
 }
 
 .headings {
-  display:grid;
+  display: grid;
   justify-content: center;
   text-align: center;
-  align-items: center; 
+  align-items: center;
   grid-template-rows: 165px repeat(3, 45px) repeat(4, 40px);
-  grid-template-areas: 
+  grid-template-areas:
     ". "
     ". "
     "nowplaying"
@@ -86,15 +92,15 @@ i {
 i.arrow-left {
   width: 0.5em;
   height: 0.5em;
-  border-left: 0.1em solid #BA0000;
-  border-bottom: 0.1em solid #BA0000;
+  border-left: 0.1em solid #ba0000;
+  border-bottom: 0.1em solid #ba0000;
   transform: rotate(45deg);
   margin-right: 20px;
 }
 
 i.arrow-left:hover {
-  border-left: 0.2em solid #BA0000;
-  border-bottom: 0.2em solid #BA0000;
+  border-left: 0.2em solid #ba0000;
+  border-bottom: 0.2em solid #ba0000;
 }
 
 .back-button {
@@ -110,45 +116,37 @@ i.arrow-left:hover {
   outline: none;
 }
 
-@media (min-width:1000px) {
+@media (min-width: 1000px) {
   .small-logo {
     margin-bottom: 5rem;
   }
 }
 
- /**************************************
+/**************************************
           3.    LOGO
 **************************************/
 
 .small-logo {
-  color: #BA0000;
-  font-family: 'Impact', sans-serif;
-  letter-spacing:  4px;
+  color: #ba0000;
+  font-family: "Impact", sans-serif;
+  letter-spacing: 4px;
   padding: 20px 0 0 35px;
   text-transform: uppercase;
 }
 
 .logo-white {
-  text-shadow: 
-      -0.5px 0 #fff, 
-       0 0.5px #fff, 
-       0.5px 0 #fff, 
-      0 -0.5px #fff;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
 
 @media (min-width: 1000px) {
-  .small-logo { 
+  .small-logo {
     letter-spacing: 5px;
   }
 
   .logo-white {
-    text-shadow: 
-        -1px 0 #fff, 
-         0 1px #fff, 
-         1px 0 #fff, 
-        0 -1px #fff;
+    text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
   }
-} 
+}
 
 /**************************************
         4.  BATTLE HEADINGS
@@ -168,13 +166,21 @@ i.arrow-left:hover {
   letter-spacing: 2px;
 }
 
-@media (min-width:1000px) {
+@media (min-width: 1000px) {
   .headings h3 {
     font-size: 1.1rem;
   }
-  
+
   .headings h4 {
     font-size: 1rem;
     line-height: 1.3rem;
   }
+}
+
+/**************************************
+        5.  ERROR MESSAGE
+**************************************/
+.error-message {
+  font-size: 1.3rem;
+  font-weight: 600;
 }

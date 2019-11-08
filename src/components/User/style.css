@@ -14,13 +14,13 @@
 ***************************************/
 .user-container {
   color: #ccc;
-  display:grid;
+  display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
   grid-template-rows: 165px repeat(3, 45px) repeat(4, 40px);
-  grid-template-areas: 
+  grid-template-areas:
     "avatar"
     "username"
     "nowplaying"
@@ -29,7 +29,7 @@
     "scrobbles-ty"
     "scrobbles-tm"
     "scrobbles-tw";
-    width: 100%;
+  width: 100%;
 }
 
 .user-container .scrobbles-total {
@@ -59,10 +59,10 @@
 }
 
 .avatar img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(186, 0, 0, 0.8);
+  max-width: 80%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(186, 0, 0, 0.8);
 }
 
 @media (min-width: 1000px) {
@@ -79,13 +79,13 @@
   grid-area: username;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #BA0000;
-  font-family:'Open Sans', sans-serif;
+  color: #ba0000;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media (min-width: 1000px) {
   .username {
-  font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
@@ -96,7 +96,7 @@
 .user-container .now-playing {
   grid-area: nowplaying;
   font-size: 0.8rem;
-  color: #BA0000;
+  color: #ba0000;
   font-weight: 700;
   text-shadow: none;
 }
