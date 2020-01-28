@@ -100,7 +100,8 @@ input:valid ~ label {
 
 .battle-button {
   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
-  border: 1px rgba(186, 0, 0, 0.8) solid;
+  border: none;
+  background: rgba(186, 0, 0, 0.8);
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
@@ -109,13 +110,13 @@ input:valid ~ label {
   padding: 10px 20px;
   text-transform: uppercase;
   width: 240px;
-  color: rgba(186, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .battle-button:active,
-.battle-button:focus {
-  background: rgba(186, 0, 0, 0.8);
-  color: #000;
+.battle-button:focus,
+.battle-button:hover {
+  background: rgba(186, 0, 0, 0.5);
   outline: none;
 }
 
